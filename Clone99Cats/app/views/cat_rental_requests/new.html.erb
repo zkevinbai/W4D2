@@ -1,0 +1,21 @@
+<form action="<%= cat_rental_requests_url %>" method="post">
+  <input type="hidden" name="cat_rental_request[cat_id]" value="<%= @cat_rental_request.cat_id %>" >
+
+  <label for="start_date">
+    <input type="date" name="cat_rental_request[start_date]" value="<%= @cat_rental_request.start_date %>" >
+  </label>
+
+  <label for="end_date">
+    <input type="date" name="cat_rental_request[end_date]" value="<%= @cat_rental_request.end_date %>" >
+  </label>
+
+  <label for="status">
+    <select name="cat_rental_request[status]">
+      <% CatRentalRequest::STATUSES.each do |status| %>
+        <option value="<%= status %>"> <%= status %> </option>
+      <% end %>
+    </select>
+  </label>
+
+  <input type="submit" value="Create Rental Request">
+</form>

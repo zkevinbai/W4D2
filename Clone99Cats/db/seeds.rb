@@ -11,3 +11,8 @@ Cat.create!(name: "San", color: Cat::COLORS.sample, birth_date: Date.new(2017, 1
 Cat.create!(name: "Francisco", color: "Orange Taby", birth_date: Date.today, sex: "M", description: "Likes the giants")
 Cat.create!(name: "Santa", color: Cat::COLORS.sample, birth_date: Date.new(2015, 11, 5), sex: "F", description: "Likes the wine")
 Cat.create!(name: "Rosa", color: Cat::COLORS.sample, birth_date: Date.new(2016, 4, 5), sex: "F", description: "Likes the beer")
+
+CatRentalRequest.destroy_all
+CatRentalRequest.create!(cat_id:Cat.last.id, start_date:Date.today, end_date:Date.today, status:"APPROVED" )
+# Validation check for renting rented cat
+# CatRentalRequest.create!(cat_id:Cat.last.id, start_date:Date.today, end_date:Date.today, status:"APPROVED" )
